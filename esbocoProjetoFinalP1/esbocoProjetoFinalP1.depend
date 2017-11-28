@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1511877233 source:e:\codeblocks programas\esbocoprojetofinalp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoes_auxiliares.h"
+	"funcoes_veiculos.h"
+	"constantes.h"
+
+1510344303 source:e:\codeblocks programas\esbocoprojetofinalp1\funcoes_auxiliares.c
+	<stdio.h>
+	<string.h>
+	"funcoes_auxiliares.h"
+
+1510344509 e:\codeblocks programas\esbocoprojetofinalp1\funcoes_auxiliares.h
+	"constantes.h"
+
+1511877523 e:\codeblocks programas\esbocoprojetofinalp1\constantes.h
+
+1511877523 source:e:\codeblocks programas\esbocoprojetofinalp1\funcoes_veiculos.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"constantes.h"
+	"funcoes_veiculos.h"
+	"funcoes_auxiliares.h"
+
+1511876871 e:\codeblocks programas\esbocoprojetofinalp1\funcoes_veiculos.h
+	"constantes.h"
+	"funcoes_auxiliares.h"
+
