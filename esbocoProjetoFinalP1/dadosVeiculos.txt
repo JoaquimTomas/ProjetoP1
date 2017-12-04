@@ -1,0 +1,6 @@
+Total de veiculos: 1
+Matricula:123455
+Data Fabrico: 2-2-2013
+Carga Maxima: 2000.00
+Numero de encomendas: 0
+Quantidade Viagens 0Estado:Disponivel

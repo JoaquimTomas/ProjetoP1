@@ -5,6 +5,7 @@
 #include "funcoes_auxiliares.h"
 tipoVeiculo inserirVeiculo(int *quantVeiculos);
 char estadoVeiculo (tipoVeiculo estado);
+void listarVeiculos(int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS]);
 
 
 #endif // FUNCOES_VEICULOS_H_INCLUDED

@@ -36,6 +36,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="funcoes_auxiliares.h" />
+		<Unit filename="funcoes_encomendas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funcoes_encomendas.h" />
+		<Unit filename="funcoes_ficheiros.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funcoes_ficheiros.h" />
 		<Unit filename="funcoes_veiculos.c">
 			<Option compilerVar="CC" />
 		</Unit>

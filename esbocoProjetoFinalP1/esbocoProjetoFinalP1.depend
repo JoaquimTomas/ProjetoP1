@@ -1,12 +1,14 @@
 # depslib dependency file v1.0
-1511877233 source:e:\codeblocks programas\esbocoprojetofinalp1\main.c
+1511966723 source:e:\codeblocks programas\esbocoprojetofinalp1\main.c
 	<stdio.h>
 	<stdlib.h>
+	<ctype.h>
 	"funcoes_auxiliares.h"
 	"funcoes_veiculos.h"
 	"constantes.h"
+	"funcoes_encomendas.h"
 
-1510344303 source:e:\codeblocks programas\esbocoprojetofinalp1\funcoes_auxiliares.c
+1511880066 source:e:\codeblocks programas\esbocoprojetofinalp1\funcoes_auxiliares.c
 	<stdio.h>
 	<string.h>
 	"funcoes_auxiliares.h"
@@ -14,9 +16,9 @@
 1510344509 e:\codeblocks programas\esbocoprojetofinalp1\funcoes_auxiliares.h
 	"constantes.h"
 
-1511877523 e:\codeblocks programas\esbocoprojetofinalp1\constantes.h
+1511879683 e:\codeblocks programas\esbocoprojetofinalp1\constantes.h
 
-1511877523 source:e:\codeblocks programas\esbocoprojetofinalp1\funcoes_veiculos.c
+1511904754 source:e:\codeblocks programas\esbocoprojetofinalp1\funcoes_veiculos.c
 	<stdio.h>
 	<string.h>
 	<ctype.h>
@@ -24,7 +26,26 @@
 	"funcoes_veiculos.h"
 	"funcoes_auxiliares.h"
 
-1511876871 e:\codeblocks programas\esbocoprojetofinalp1\funcoes_veiculos.h
+1511904754 e:\codeblocks programas\esbocoprojetofinalp1\funcoes_veiculos.h
 	"constantes.h"
 	"funcoes_auxiliares.h"
+
+1511966104 source:e:\codeblocks programas\esbocoprojetofinalp1\funcoes_encomendas.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"constantes.h"
+	"funcoes_veiculos.h"
+	"funcoes_auxiliares.h"
+	"funcoes_encomendas.h"
+
+1511966094 e:\codeblocks programas\esbocoprojetofinalp1\funcoes_encomendas.h
+	"constantes.h"
+
+1511966521 source:e:\codeblocks programas\esbocoprojetofinalp1\funcoes_ficheiros.c
+	<stdio.h>
+	"funcoes_ficheiros.h"
+
+1511966367 e:\codeblocks programas\esbocoprojetofinalp1\funcoes_ficheiros.h
+	"constantes.h"
 

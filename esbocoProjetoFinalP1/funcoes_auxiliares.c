@@ -36,6 +36,7 @@ tipoData lerData(void)
             data.dia=lerInteiro("\nDia:",1,28);
         }
     }
+    return data;
 }
 // Acrescentada variavel controlo para repetir insercao se ao for inserido numero int
 int lerInteiro(char mensagem[MAX_STRING], int minimo, int maximo)

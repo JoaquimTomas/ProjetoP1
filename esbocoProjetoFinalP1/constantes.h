@@ -33,6 +33,8 @@ typedef struct
     tipoData dataFabrico;
     float cargaMax;
     char estado;
+    int numEncomendas;
+    int quantViagens;
 }tipoVeiculo;
 
 
