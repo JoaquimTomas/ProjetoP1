@@ -80,5 +80,25 @@ void gravarFicheiroBinario (tipoVeiculo listaVeiculos[MAX_VEICULOS], int quantVe
 
 void lerFicheiroBinario(tipoVeiculo listaVeiculos[MAX_VEICULOS],int quantVeiculos)
 {
+    FILE *ficheiro;
+    int controlo;
 
+    ficheiro = fopen("dadosVeiculos.bin","rb");
+    if(ficheiro==NULL)
+    {
+        printf("\n\nErro na abertura do ficheiro");
+    }
+    else
+    {
+        controlo=fread(listaVeiculos,sizeof(listaVeiculos), quantVeiculos,ficheiro);
+        if(controlo != quantVeiculos)
+        {
+            printf("\n\nErro: erro na leitura dos veiculos");
+        }
+        else
+        {
+            printf("\n\nLeitura efetuada com sucesso");
+        }
+    }
+    fclose(ficheiro);
 }

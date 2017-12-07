@@ -4,6 +4,12 @@
 #include "funcoes_auxiliares.h"
 
 
+int verificarMatricula(char tipoVeiculo.matricula[7])
+{
+
+    sizeof(int)
+}
+
 tipoData lerData(void)
 {
     tipoData data;

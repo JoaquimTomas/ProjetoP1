@@ -11,6 +11,7 @@ tipoVeiculo inserirVeiculo (int *quantVeiculos)
 {
     printf("\n\t***********Inserir Veiculo**************");
     tipoVeiculo veiculo;
+    limpaBufferStdin();
     lerString("\ninsira a matricula:",veiculo.matricula,7);
     printf("\nIntroduza a data de fabrico;");
     veiculo.dataFabrico = lerData();
