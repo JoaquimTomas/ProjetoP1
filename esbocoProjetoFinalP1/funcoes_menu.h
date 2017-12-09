@@ -5,6 +5,8 @@
 #include "funcoes_veiculos.h"
 #include "constantes.h"
 #include "funcoes_encomendas.h"
+int menuPrincipal(int quantVeiculos,int quantEncomendas);
+int menuVeiculos (int quantVeiculos);
+int menuEncomendas(int quantEncomendas);
 
-void menu(tipoVeiculo listarVeiculos[MAX_VEICULOS], int *quantVeiculos, tipoEncomenda listarEncomenda[MAX_ENCOMENDA], int *quantEncomendas);
 #endif //FUNCOES_MENU_H_INCLUDED

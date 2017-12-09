@@ -2,14 +2,21 @@
 #include <string.h>
 
 #include "funcoes_auxiliares.h"
+/*
 
-
-int verificarMatricula(char tipoVeiculo.matricula[7])
+void verificarMatricula(char matricula[7])
 {
 
-    sizeof(int)
-}
+    int i, controlo, controlo2;
+    controlo=sizeof(int);
 
+    for(i=0;i<7;i++)
+    {
+       isdigit()
+    }
+
+}
+*/
 tipoData lerData(void)
 {
     tipoData data;

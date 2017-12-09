@@ -6,4 +6,5 @@ char estadoEncomenda (tipoEncomenda encomenda);
 tipoEncomenda inserirEncomenda (int *quantEncomendas);
 void listarEncomenda (int quantEncomendas, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA]);
 void eliminarEncomenda (int *quantEncomendas, tipoEncomenda vetorEncomendas[MAX_STRING], tipoVeiculo vetorVeiculo[MAX_STRING]);
+int confirmarEncomenda(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int quantEncomendas);
 #endif //FUNCOES_ENCOMENDAS_H_INCLUDED

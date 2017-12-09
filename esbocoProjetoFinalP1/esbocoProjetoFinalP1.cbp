@@ -44,6 +44,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="funcoes_ficheiros.h" />
+		<Unit filename="funcoes_menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funcoes_menu.h" />
 		<Unit filename="funcoes_veiculos.c">
 			<Option compilerVar="CC" />
 		</Unit>

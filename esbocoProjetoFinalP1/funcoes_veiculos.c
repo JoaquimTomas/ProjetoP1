@@ -13,6 +13,7 @@ tipoVeiculo inserirVeiculo (int *quantVeiculos)
     tipoVeiculo veiculo;
     limpaBufferStdin();
     lerString("\ninsira a matricula:",veiculo.matricula,7);
+//    verificarMatricula(veiculo.matricula);
     printf("\nIntroduza a data de fabrico;");
     veiculo.dataFabrico = lerData();
     veiculo.cargaMax = lerFloat("\nIntroduza a carga maxima:",CARGA_MIN,CARGA_MAX);

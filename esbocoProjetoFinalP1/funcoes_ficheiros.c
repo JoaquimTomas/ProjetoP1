@@ -3,6 +3,7 @@
 #include "funcoes_ficheiros.h"
 
 
+
 void guardarficheiroTexto (tipoVeiculo listaVeiculos[MAX_VEICULOS], int quantVeiculos)
 {
     FILE *ficheiro;
@@ -101,4 +102,96 @@ void lerFicheiroBinario(tipoVeiculo listaVeiculos[MAX_VEICULOS],int quantVeiculo
         }
     }
     fclose(ficheiro);
+}
+
+void gravarFicheiroBinarioEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int quantEncomendas)
+{
+    FILE *ficheiro;
+    int  controlo;
+
+    ficheiro=fopen("dadosEncomenda.bin","wb");
+    if (ficheiro==NULL)
+    {
+        printf("\n\nErro: Erro na abertura do ficheiro");
+    }
+    else
+    {
+        controlo=fwrite(listaEncomendas, sizeof(tipoEncomenda),quantEncomendas,ficheiro);
+        if(controlo!=1)
+        {
+            printf("\n\nErro:Erro na gravacao das encomendas");
+        }
+        else
+        {
+            printf("\n\nGravacao efetuada com sucesso");
+        }
+    }
+    fclose(ficheiro);
+}
+
+void guardarFicheiroTextoEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int quantEncomendas)
+{
+    FILE *ficheiro;
+    int i;
+
+    ficheiro = fopen("dadosEncomendas.txt","w");
+    if(ficheiro==NULL)
+    {
+        printf("\n\nERRO: Falha na abertura do ficheiro");
+
+    }
+    else
+    {
+        fprintf(ficheiro,"total de encomendas: %d\n",quantEncomendas);
+        for(i=0; i<quantEncomendas; i++)
+    {
+        fprintf(ficheiro,"Numero Registo: %d\n",listaEncomendas[i].numeroReg);
+            fprintf(ficheiro,"Data registo: %d-%d-%d\n",listaEncomendas[i].dataReg);
+            fprintf(ficheiro,"Peso:%.02f\n",listaEncomendas[i].peso);
+            fprintf(ficheiro,"Destino: %s\n",listaEncomendas[i].destino);
+            fprintf(ficheiro,"Observacoes: %s\n",listaEncomendas[i].obs);
+            switch(listaEncomendas[i].estado)
+            {
+            case 'R':
+                fprintf(ficheiro,"Estado:Registada\n",listaEncomendas[i].estado);
+                break;
+            case 'C':
+                fprintf(ficheiro,"Estado:Carregada\n",listaEncomendas[i].estado);
+                break;
+            case 'E':
+                fprintf(ficheiro,"Estado:Entregue\n",listaEncomendas[i].estado);
+                break;
+            case 'D':
+                fprintf(ficheiro,"Estadodo: Devolvida\n",listaEncomendas[i].estado);
+                break;
+            }
+        }
+    }
+    fclose(ficheiro);
+
+}
+
+void lerFicheiroBinarioEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int quantEncomendas)
+{
+FILE *ficheiro;
+int controlo;
+
+ficheiro = fopen("dadosEncomendas.bin","rb");
+if(ficheiro==NULL)
+{
+printf("\n\nErro na abertura do ficheiro");
+}
+else
+{
+controlo=fread(listaEncomendas,sizeof(listaEncomendas), quantEncomendas,ficheiro);
+if(controlo != quantEncomendas)
+{
+printf("\n\nErro: erro na leitura dos veiculos");
+}
+else
+{
+printf("\n\nLeitura efetuada com sucesso");
+}
+}
+fclose(ficheiro);
 }
