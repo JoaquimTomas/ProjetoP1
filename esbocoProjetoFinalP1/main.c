@@ -8,10 +8,10 @@
 #include "funcoes_menu.h"
 #include "funcoes_ficheiros.h"
 
-
 int main()
 {
     int opcao;
+
     tipoVeiculo listaVeiculos[MAX_VEICULOS];
     tipoEncomenda listaEncomendas[MAX_ENCOMENDA];
     int quantVeiculos=0,quantEncomendas=0;
@@ -65,7 +65,8 @@ int main()
                 case 3://Eliminar encomenda
                     eliminarEncomenda(&quantEncomendas, listaEncomendas, listaVeiculos);
                     break;
-                case 4://alterar estado
+                case 4://Alterar estado
+                    alterarEstado(listaEncomendas, quantEncomendas);
                     break;
                 case 6://sair
                     break;
@@ -77,8 +78,10 @@ int main()
             break;
         case 3:
             gravarFicheiroBinario(listaVeiculos, quantVeiculos);
+            gravarFicheiroBinarioEncomendas(listaEncomendas, quantEncomendas);
             break;
         case 4:
+            lerFicheiroBinarioEncomendas(listaEncomendas, quantEncomendas);
             lerFicheiroBinario(listaVeiculos, quantVeiculos);
             break;
         case 5:
@@ -91,5 +94,6 @@ int main()
 
     }
     while(opcao != 5);
+    return 0;
 
 }

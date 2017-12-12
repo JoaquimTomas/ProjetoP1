@@ -6,6 +6,7 @@
 tipoVeiculo inserirVeiculo(int *quantVeiculos);
 char estadoVeiculo (tipoVeiculo estado);
 void listarVeiculos(int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS]);
+void inserirMatricula(char matricula[5]);
 
 
 #endif // FUNCOES_VEICULOS_H_INCLUDED
