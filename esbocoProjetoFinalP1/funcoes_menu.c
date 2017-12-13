@@ -48,6 +48,7 @@ int menuEncomendas(int quantEncomendas)
                 printf("\nListar Encomeda(s)-2");
                 printf("\nEliminar Encomenda-3");
                 printf("\nAlterar Estado de uma Encomenda-4");
+                printf("\nCarregar Encomenda-5");
                 printf("\nRetroceder-6");
                 printf("\nOpcao:");
                 scanf(" %d",&opcao);

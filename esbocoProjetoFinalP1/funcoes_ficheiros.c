@@ -79,7 +79,7 @@ void gravarFicheiroBinario (tipoVeiculo listaVeiculos[MAX_VEICULOS], int quantVe
     fclose(ficheiro);
 }
 
-void lerFicheiroBinario(tipoVeiculo listaVeiculos[MAX_VEICULOS],int quantVeiculos)
+void lerFicheiroBinario(tipoVeiculo listaVeiculos[MAX_VEICULOS], int *quantVeiculos)
 {
     FILE *ficheiro;
     int controlo;
@@ -91,14 +91,22 @@ void lerFicheiroBinario(tipoVeiculo listaVeiculos[MAX_VEICULOS],int quantVeiculo
     }
     else
     {
-        controlo=fread(listaVeiculos,sizeof(listaVeiculos), quantVeiculos,ficheiro);
-        if(controlo != quantVeiculos)
+        controlo=fread(quantVeiculos, sizeof(int),1,ficheiro);
+        if(controlo != 1)
         {
             printf("\n\nErro: erro na leitura dos veiculos");
         }
         else
         {
-            printf("\n\nLeitura efetuada com sucesso");
+            controlo=fread(listaVeiculos, sizeof(tipoVeiculo), *quantVeiculos, ficheiro);
+            if(controlo != *quantVeiculos)
+            {
+                printf("\n\nErro na leitura dos veiculos");
+            }
+            else
+            {
+                printf("\n\nLeitura efetuada com sucesso");
+            }
         }
     }
     fclose(ficheiro);
@@ -144,8 +152,8 @@ void guardarFicheiroTextoEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA]
     {
         fprintf(ficheiro,"total de encomendas: %d\n",quantEncomendas);
         for(i=0; i<quantEncomendas; i++)
-    {
-        fprintf(ficheiro,"Numero Registo: %d\n",listaEncomendas[i].numeroReg);
+        {
+            fprintf(ficheiro,"Numero Registo: %d\n",listaEncomendas[i].numeroReg);
             fprintf(ficheiro,"Data registo: %d-%d-%d\n",listaEncomendas[i].dataReg);
             fprintf(ficheiro,"Peso:%.02f\n",listaEncomendas[i].peso);
             fprintf(ficheiro,"Destino: %s\n",listaEncomendas[i].destino);
@@ -171,27 +179,35 @@ void guardarFicheiroTextoEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA]
 
 }
 
-void lerFicheiroBinarioEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int quantEncomendas)
+void lerFicheiroBinarioEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int *quantEncomendas)
 {
-FILE *ficheiro;
-int controlo;
+    FILE *ficheiro;
+    int controlo;
 
-ficheiro = fopen("dadosEncomendas.bin","rb");
-if(ficheiro==NULL)
-{
-printf("\n\nErro na abertura do ficheiro");
-}
-else
-{
-controlo=fread(listaEncomendas,sizeof(listaEncomendas), quantEncomendas,ficheiro);
-if(controlo != quantEncomendas)
-{
-printf("\n\nErro: erro na leitura dos veiculos");
-}
-else
-{
-printf("\n\nLeitura efetuada com sucesso");
-}
-}
-fclose(ficheiro);
+    ficheiro = fopen("dadosEncomenda.bin","rb");
+    if(ficheiro==NULL)
+    {
+        printf("\n\nErro na abertura do ficheiro");
+    }
+    else
+    {
+        controlo=fread(quantEncomendas,sizeof(int), 1,ficheiro);
+        if(controlo != 1)
+        {
+            printf("\n\nErro: erro na leitura das encomendas");
+        }
+        else
+        {
+            controlo=fread(listaEncomendas,sizeof(listaEncomendas), *quantEncomendas,ficheiro);
+            if(controlo != *quantEncomendas)
+            {
+                printf("\n\nErro na leitura das encomendas");
+            }
+            else
+            {
+                printf("\n\nLeitura efetuada com sucesso");
+            }
+        }
+    }
+    fclose(ficheiro);
 }

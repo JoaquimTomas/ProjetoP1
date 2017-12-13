@@ -9,4 +9,8 @@ void eliminarEncomenda (int *quantEncomendas, tipoEncomenda vetorEncomendas[MAX_
 int procurarEncomenda(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int quantEncomendas);
 void alterarDestino (tipoEncomenda listarEncomenda[MAX_ENCOMENDA], int quantEncomendas, int procurar);
 void alterarEstado (tipoEncomenda listaEncomenda[MAX_ENCOMENDA], int quantEncomendas);
+
+void registarCarregamento (int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS], tipoEncomenda listaEncomenda[MAX_ENCOMENDA], int quantEncomendas);
+
+
 #endif //FUNCOES_ENCOMENDAS_H_INCLUDED

@@ -34,7 +34,7 @@ int main()
                 case 2://listar veiculos
                     listarVeiculos(quantVeiculos,listaVeiculos);
                     break;
-                case 3://alterar estado dum veiculo
+                case 3:alterarEstadoVeiculo(listaVeiculos, quantVeiculos);
                     break;
                 case 4://sair
 
@@ -68,6 +68,8 @@ int main()
                 case 4://Alterar estado
                     alterarEstado(listaEncomendas, quantEncomendas);
                     break;
+                case 5: registarCarregamento(quantVeiculos, listaVeiculos, listaEncomendas, quantEncomendas);
+                    break;
                 case 6://sair
                     break;
                 default:
@@ -79,10 +81,12 @@ int main()
         case 3:
             gravarFicheiroBinario(listaVeiculos, quantVeiculos);
             gravarFicheiroBinarioEncomendas(listaEncomendas, quantEncomendas);
+            guardarficheiroTexto(listaVeiculos, quantVeiculos);
+            guardarFicheiroTextoEncomendas(listaEncomendas, quantEncomendas);
             break;
         case 4:
-            lerFicheiroBinarioEncomendas(listaEncomendas, quantEncomendas);
-            lerFicheiroBinario(listaVeiculos, quantVeiculos);
+            lerFicheiroBinarioEncomendas(listaEncomendas, &quantEncomendas);
+            lerFicheiroBinario(listaVeiculos, &quantVeiculos);
             break;
         case 5:
             break;
@@ -93,7 +97,7 @@ int main()
 
 
     }
-    while(opcao != 5);
+    while(opcao != 99);
     return 0;
 
 }

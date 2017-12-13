@@ -19,6 +19,7 @@ typedef struct
 typedef struct
 {
     int numeroReg;
+    char matriculaEnc[5];
     tipoData dataReg;
     float peso;
     char destino[MAX_STRING];
@@ -32,6 +33,7 @@ typedef struct
     char matricula[5];
     tipoData dataFabrico;
     float cargaMax;
+    float pesoEncomendas;
     char estado;
     int numEncomendas;
     int quantViagens;
