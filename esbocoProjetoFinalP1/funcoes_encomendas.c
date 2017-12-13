@@ -10,9 +10,11 @@
 tipoEncomenda inserirEncomenda (int *quantEncomendas)
 {
     tipoEncomenda encomenda;
+    int ver;
     char opcao;
     printf("\n\t***************Inserir Encomenda******************");
-    encomenda.numeroReg=lerInteiro("\n\nIntroduza Numero de Registo",MIN_ENCOMENDA,MAX_ENCOMENDA);
+    encomenda.numeroReg=*quantEncomendas+1;
+    printf("\nNumero de Registo da sua encomenda:%d",encomenda.numeroReg);
     encomenda.dataReg=lerData();
     encomenda.peso=lerFloat("\nIntroduza o peso:",CARGA_MIN,CARGA_MAX);
     lerString("\nDestino:",encomenda.destino,MAX_STRING);
@@ -56,14 +58,14 @@ void registarCarregamento (int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEIC
         j=procurarEncomenda(listaEncomenda, quantEncomendas);
         do
         {
-            printf("\nIntroduza um dos seguites veiculos a carregar:");
+            printf("\nIntroduza o Nr. Veiculo a carregar:");
             for(i=0; i<quantVeiculos; i++)
             {
                 if(vetorVeiculos[i].estado == 'D' || vetorVeiculos[i].estado == 'E' || vetorVeiculos[i].estado != 'A')
                 {
                     if((vetorVeiculos[i].pesoEncomendas+listaEncomenda[j].peso <= vetorVeiculos[i].cargaMax))
                     {
-                    printf("\nCarrinha%d || Matricula:%c%c - %c%c - %c%c",i+1, vetorVeiculos[i].matricula[0],vetorVeiculos[i].matricula[1],vetorVeiculos[i].matricula[2],vetorVeiculos[i].matricula[3],vetorVeiculos[i].matricula[4],vetorVeiculos[i].matricula[5]);
+                    printf("\nNr. Veiculo:%d || Matricula:%c%c - %c%c - %c%c",i+1, vetorVeiculos[i].matricula[0],vetorVeiculos[i].matricula[1],vetorVeiculos[i].matricula[2],vetorVeiculos[i].matricula[3],vetorVeiculos[i].matricula[4],vetorVeiculos[i].matricula[5]);
                     var++;
                     }
                 }
@@ -76,8 +78,7 @@ void registarCarregamento (int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEIC
 
             else
             {
-                printf("bacalhao com natas");
-            printf("\nIntroduza o numero do Veiculo:");
+            printf("\nIntroduza Nr. Veiculo:");
             scanf(" %d",&numero);
             numero--;
             if(vetorVeiculos[numero].estado == 'E' || vetorVeiculos[numero].estado == 'D')
@@ -85,6 +86,7 @@ void registarCarregamento (int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEIC
                 vetorVeiculos[numero].pesoEncomendas=vetorVeiculos[numero].pesoEncomendas+listaEncomenda[j].peso;
                 listaEncomenda[j].matriculaEnc[5]=vetorVeiculos[numero].matricula;
                 listaEncomenda[j].estado = 'C';
+               // vetorVeiculos[numero].numEncomendas++;
                 if(vetorVeiculos[numero].pesoEncomendas>=(vetorVeiculos[numero].cargaMax*0.8))
             {
                 vetorVeiculos[numero].estado= 'T';
@@ -98,8 +100,9 @@ void registarCarregamento (int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEIC
             {
                 printf("\nErro: Veiculo nao Disponivel, ou inexistente");
             }
-        }}
-        while(vetorVeiculos[numero].estado != 'E');
+        }
+        printf("estado veiculo: %c",vetorVeiculos[numero].estado);}
+        while(vetorVeiculos[numero].estado == 'D');
     }
 }
 
@@ -235,6 +238,7 @@ int procurarEncomenda(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int quantEnc
     printf("\n\nNumero nao encontrado");
 
 }
+
 
 
 void eliminarEncomenda (int *quantEncomendas, tipoEncomenda vetorEncomendas[MAX_STRING], tipoVeiculo vetorVeiculo[MAX_STRING])

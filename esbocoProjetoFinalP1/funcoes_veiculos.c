@@ -56,6 +56,7 @@ void inserirMatricula(char matricula[5])
 char estadoVeiculo (tipoVeiculo estado)
 {
     char opcao;
+    int duh=0;
     do
     {
         printf("\nIntroduza o Estado do Veiculo: %c%c - %c%c - %c%c\n(D)disponivel || (A)Avariado:",estado.matricula[0],estado.matricula[1],estado.matricula[2],estado.matricula[3],estado.matricula[4],estado.matricula[5]);
@@ -64,14 +65,15 @@ char estadoVeiculo (tipoVeiculo estado)
         switch(opcao)
         {
         case 'D'://disponivel
+            duh++;
             break;
         case 'A'://Avariado
+            duh++;
             break;
         default:
             opcao=estadoVeiculo(estado);
         }
-    }
-    while(opcao != 'D' || opcao != 'A');
+    }while(duh==0);
     return opcao;
 }
 
@@ -191,6 +193,8 @@ void alterarEstadoVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeicu
             opcao=toupper(opcao);
         }
         while(opcao != 'D' || opcao != 'E' || opcao != 'T' || opcao != 'A');
+        if(opcao=='D')
+        {vetorVeiculo[indice].quantViagens++;}
         vetorVeiculo[indice].estado=opcao;
         break;
     case 'A':
