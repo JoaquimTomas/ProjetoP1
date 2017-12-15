@@ -124,14 +124,20 @@ void gravarFicheiroBinarioEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA
     }
     else
     {
-        controlo=fwrite(listaEncomendas, sizeof(tipoEncomenda),quantEncomendas,ficheiro);
+        controlo=fwrite(&quantEncomendas, sizeof(int), 1, ficheiro);
         if(controlo!=1)
         {
             printf("\n\nErro:Erro na gravacao das encomendas");
         }
         else
         {
-            printf("\n\nGravacao efetuada com sucesso");
+            controlo = fwrite(listaEncomendas, sizeof(tipoEncomenda), quantEncomendas, ficheiro);
+            if(controlo != quantEncomendas)
+            {printf("Erro na gravaçao (lista Estudantes)");}
+            else
+            {
+            printf("\n\nGravacao Encomendas efetuada com sucesso");
+            }
         }
     }
     fclose(ficheiro);
@@ -205,7 +211,7 @@ void lerFicheiroBinarioEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], 
             }
             else
             {
-                printf("\n\nLeitura efetuada com sucesso");
+                printf("\n\nLeitura Encomendas efetuada com sucesso");
             }
         }
     }

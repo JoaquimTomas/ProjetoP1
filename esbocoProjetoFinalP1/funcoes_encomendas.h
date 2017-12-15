@@ -12,5 +12,6 @@ void alterarEstado (tipoEncomenda listaEncomenda[MAX_ENCOMENDA], int quantEncome
 
 void registarCarregamento (int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS], tipoEncomenda listaEncomenda[MAX_ENCOMENDA], int quantEncomendas);
 
+void carregarEncomendaAuto(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEmcomendas);
 
 #endif //FUNCOES_ENCOMENDAS_H_INCLUDED

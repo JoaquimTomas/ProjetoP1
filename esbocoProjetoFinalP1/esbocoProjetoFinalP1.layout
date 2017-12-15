@@ -4,17 +4,7 @@
 	<ActiveTarget name="Debug" />
 	<File name="funcoes_encomendas.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="828" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="funcoes_auxiliares.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="111" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="321" topLine="1" />
+			<Cursor1 position="1010" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="funcoes_ficheiros.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -22,33 +12,28 @@
 			<Cursor1 position="665" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="funcoes_veiculos.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="754" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="funcoes_menu.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="0" />
+			<Cursor1 position="387" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="funcoes_auxiliares.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="111" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="constantes.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="591" topLine="6" />
+			<Cursor1 position="509" topLine="6" />
 		</Cursor>
 		<Folding>
 			<Collapse line="12" />
 		</Folding>
-	</File>
-	<File name="funcoes_veiculos.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="665" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="funcoes_encomendas.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1222" topLine="39" />
-		</Cursor>
-	</File>
-	<File name="funcoes_ficheiros.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6153" topLine="0" />
-		</Cursor>
 	</File>
 	<File name="funcoes_auxiliares.c" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
@@ -58,14 +43,29 @@
 			<Collapse line="20" />
 		</Folding>
 	</File>
-	<File name="funcoes_menu.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="funcoes_encomendas.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1496" topLine="21" />
+			<Cursor1 position="8760" topLine="289" />
 		</Cursor>
 	</File>
-	<File name="funcoes_veiculos.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="funcoes_ficheiros.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="242" topLine="0" />
+			<Cursor1 position="4296" topLine="43" />
+		</Cursor>
+	</File>
+	<File name="funcoes_menu.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2392" topLine="46" />
+		</Cursor>
+	</File>
+	<File name="funcoes_veiculos.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10084" topLine="177" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2462" topLine="2" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

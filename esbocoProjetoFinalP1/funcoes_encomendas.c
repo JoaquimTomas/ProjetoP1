@@ -10,7 +10,6 @@
 tipoEncomenda inserirEncomenda (int *quantEncomendas)
 {
     tipoEncomenda encomenda;
-    int ver;
     char opcao;
     printf("\n\t***************Inserir Encomenda******************");
     encomenda.numeroReg=*quantEncomendas+1;
@@ -27,6 +26,7 @@ tipoEncomenda inserirEncomenda (int *quantEncomendas)
         switch(opcao)
         {
         case 'S':
+            limpaBufferStdin();
             lerString("\nUma breve descricao:",encomenda.obs,MAX_STRING);
             opcao='N';
             break;
@@ -50,7 +50,7 @@ void registarCarregamento (int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEIC
 {
     if(quantVeiculos == 0)
     {
-        printf("\n\nInpossivel carregar nao existem veiculos inseridos");
+        printf("\n\nInpossivel carregar, -nao existem veiculos inseridos-");
     }
     else
     {
@@ -61,7 +61,7 @@ void registarCarregamento (int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEIC
             printf("\nIntroduza o Nr. Veiculo a carregar:");
             for(i=0; i<quantVeiculos; i++)
             {
-                if(vetorVeiculos[i].estado == 'D' || vetorVeiculos[i].estado == 'E' || vetorVeiculos[i].estado != 'A')
+                if(vetorVeiculos[i].estado == 'D' || vetorVeiculos[i].estado == 'E')
                 {
                     if((vetorVeiculos[i].pesoEncomendas+listaEncomenda[j].peso <= vetorVeiculos[i].cargaMax))
                     {
@@ -84,8 +84,10 @@ void registarCarregamento (int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEIC
             if(vetorVeiculos[numero].estado == 'E' || vetorVeiculos[numero].estado == 'D')
             {
                 vetorVeiculos[numero].pesoEncomendas=vetorVeiculos[numero].pesoEncomendas+listaEncomenda[j].peso;
-                listaEncomenda[j].matriculaEnc[5]=vetorVeiculos[numero].matricula;
+                strcpy(listaEncomenda[j].matriculaEnc,vetorVeiculos[numero].matricula);
+              //  listaEncomenda[j].matriculaEnc=vetorVeiculos[numero].matricula;
                 listaEncomenda[j].estado = 'C';
+                printf("\nmatricula encomenda %s",listaEncomenda[j].matriculaEnc);
                // vetorVeiculos[numero].numEncomendas++;
                 if(vetorVeiculos[numero].pesoEncomendas>=(vetorVeiculos[numero].cargaMax*0.8))
             {
@@ -236,6 +238,7 @@ int procurarEncomenda(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int quantEnc
     }
 
     printf("\n\nNumero nao encontrado");
+    return -1;
 
 }
 
@@ -282,4 +285,35 @@ void alterarDestino (tipoEncomenda listarEncomenda[MAX_ENCOMENDA], int quantEnco
     //  procura=procurarEncomenda(listarEncomenda, quantEncomendas);
     limpaBufferStdin();
     lerString("\n\nIntroduza o novo destino:", listarEncomenda[procura].obs,MAX_STRING);
+}
+
+
+//Carregar a emcomenda para veiculo automaticamente
+void carregarEncomendaAuto(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEmcomendas)
+{
+    int i, encomenda;
+    encomenda=procurarEncomenda(vetorEncomendas, quantEmcomendas);
+    if(encomenda != -1)
+    {
+    for(i=0;i<quantVeiculos;i++)
+    {
+        if(vetorVeiculos[i].estado == 'D' || vetorVeiculos[i].estado == 'E')
+        {
+            if(vetorVeiculos[i].pesoEncomendas+vetorEncomendas[encomenda].peso < vetorVeiculos[i].cargaMax)
+            {
+            strcpy(vetorEncomendas[encomenda].matriculaEnc, vetorVeiculos[i].matricula);
+            //mudar estado emconmeda
+            vetorEncomendas[encomenda].estado='C';
+            //mudar estado veiculo
+            vetorVeiculos[i].estado='E';
+            vetorVeiculos[i].pesoEncomendas = vetorVeiculos[i].pesoEncomendas + vetorEncomendas[encomenda].peso;
+            printf("\nEncomenda esta na carrinha: ");
+            printf("Nr. Veiculo:%d || Matricula:%c%c - %c%c - %c%c",i+1, vetorVeiculos[i].matricula[0],vetorVeiculos[i].matricula[1],vetorVeiculos[i].matricula[2],vetorVeiculos[i].matricula[3],vetorVeiculos[i].matricula[4],vetorVeiculos[i].matricula[5]);
+
+            printf("\n matricula %s", vetorEncomendas[encomenda].matriculaEnc);
+            break;
+            }
+        }
+    }
+    }
 }

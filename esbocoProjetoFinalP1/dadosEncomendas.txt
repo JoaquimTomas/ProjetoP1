@@ -1,1 +1,74 @@
-total de encomendas: 0
+total de encomendas: 10
+Numero Registo: 1
+Data registo: 12-12-2010
+Peso:500.00
+Destino: bahamas
+
+Observacoes: t#Xzşÿÿÿ2EÑt¸DÑtğåÑt¿k@
+Estado:Registada
+Numero Registo: 2
+Data registo: 2-2-2013
+Peso:600.00
+Destino: l 
+
+Observacoes: t#Xzşÿÿÿ2EÑt¸DÑtğåÑt¿k@
+Estado:Registada
+Numero Registo: 3
+Data registo: 2-2-2013
+Peso:700.00
+Destino: koala
+
+Observacoes: t#Xzşÿÿÿ2EÑt¸DÑtğåÑt¿k@
+Estado:Registada
+Numero Registo: 4
+Data registo: 2-2-2016
+Peso:800.00
+Destino: la
+
+Observacoes: uma breve discricao
+
+Estado:Registada
+Numero Registo: 5
+Data registo: 3-3-2015
+Peso:900.00
+Destino: topa
+
+Observacoes: t#Xzşÿÿÿ2EÑt¸DÑtğåÑt¿k@
+Estado:Registada
+Numero Registo: 6
+Data registo: 12-1-2010
+Peso:250.00
+Destino: lisboa
+
+Observacoes: t#Xzşÿÿÿ2EÑt¸DÑtğåÑt¿k@
+Estado:Registada
+Numero Registo: 7
+Data registo: 4-4-2017
+Peso:300.00
+Destino: belem
+
+Observacoes: jesus cristo fragil
+
+Estado:Registada
+Numero Registo: 8
+Data registo: 2-2-2013
+Peso:850.00
+Destino: copacabana
+
+Observacoes: uma cabana
+
+Estado:Registada
+Numero Registo: 9
+Data registo: 2-4-2016
+Peso:1234.00
+Destino: volatil
+
+Observacoes: t#Xzşÿÿÿ2EÑt¸DÑtğåÑt¿k@
+Estado:Registada
+Numero Registo: 10
+Data registo: 2-2-2012
+Peso:505.00
+Destino: hawai
+
+Observacoes: t#Xzşÿÿÿ2EÑt¸DÑtğåÑt¿k@
+Estado:Registada

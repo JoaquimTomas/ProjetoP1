@@ -18,6 +18,7 @@ int menuPrincipal(int quantVeiculos,int quantEncomendas)
     printf("\nSair-5");
     printf("\nOpcao:");
     scanf(" %d",&opcao);
+    limpaBufferStdin();
     return opcao;
 
 }
@@ -32,10 +33,11 @@ int menuVeiculos (int quantVeiculos)
     printf("\nInserir veiculo-1");
     printf("\nListar Veiculo(s)-2");
     printf("\nAlterar estado de um Veiculo-3");
-    printf("\nRetroceder-4");
+    printf("\nListar Veiculos(Decrescente pelo Nr.Encomedas Entregues)-4");
+    printf("\nRetroceder-5");
     printf("\nOpcao:");
     scanf(" %d",&opcao);
-
+    limpaBufferStdin();
     return opcao;
 }
 
@@ -49,8 +51,34 @@ int menuEncomendas(int quantEncomendas)
                 printf("\nEliminar Encomenda-3");
                 printf("\nAlterar Estado de uma Encomenda-4");
                 printf("\nCarregar Encomenda-5");
-                printf("\nRetroceder-6");
+                printf("\nListar Veiculo (de uma encomenda entregue)-6");
+                printf("\nRetroceder-7");
                 printf("\nOpcao:");
                 scanf(" %d",&opcao);
                 return opcao;
 }
+
+int menuCarregarEncomenda (void)
+{
+    int opcao;
+    printf("\n\t************Carregar Encomenda**************");
+    printf("\nSelecionar Veiculo-1");
+    printf("\nSelecao Automatica-2");
+    printf("\nSair-3");
+    printf("\nOpcao:");
+    scanf(" %d",&opcao);
+    return opcao;
+
+}
+
+int menuAlterarEstado(void)
+{
+    int opcao;
+    printf("\n\t**************Alterar Estado***************");
+    printf("\nAlterar Estado Encomenda-2");
+    printf("\nAlterar Estado de uma encomenda devolvida-2");
+    printf("\nSair-3");
+    printf("\nopcao:");
+    scanf( "%d",&opcao);
+}
+

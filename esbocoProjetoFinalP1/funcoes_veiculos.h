@@ -11,6 +11,11 @@ void inserirMatricula(char matricula[5]);
 void alterarEstadoVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos);
 int procurarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos);
 
+void listarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEncomendas);
+
+void organizaVeiculos(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos);
+
+
 
 #endif // FUNCOES_VEICULOS_H_INCLUDED
 

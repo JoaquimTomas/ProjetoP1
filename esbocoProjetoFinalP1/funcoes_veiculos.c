@@ -9,9 +9,14 @@
 
 tipoVeiculo inserirVeiculo (int *quantVeiculos)
 {
+    if(*quantVeiculos==10)
+    {
+        printf("\n\nAtingido o numero maximo de veiculos");
+    }
+    else
+    {
     printf("\n\t***********Inserir Veiculo**************");
     tipoVeiculo veiculo;
-    limpaBufferStdin();
     inserirMatricula(veiculo.matricula);
     printf("\nIntroduza a data de fabrico;");
     veiculo.dataFabrico = lerData();
@@ -22,6 +27,7 @@ tipoVeiculo inserirVeiculo (int *quantVeiculos)
     veiculo.pesoEncomendas=0;
     (*quantVeiculos)++;
     return veiculo;
+    }
 }
 
 void inserirMatricula(char matricula[5])
@@ -73,13 +79,19 @@ char estadoVeiculo (tipoVeiculo estado)
         default:
             opcao=estadoVeiculo(estado);
         }
-    }while(duh==0);
+    }
+    while(duh==0);
     return opcao;
 }
 
 
 void listarVeiculos(int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS])
 {
+    if(quantVeiculos == 0)
+    {
+        printf("\nNao existem veiculos para listar");
+    }
+    else{
     printf("\n\t***************Listar Veiculos**************");
     int i;
     for(i=0; i<quantVeiculos; i++)
@@ -108,7 +120,7 @@ void listarVeiculos(int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS])
         }
         printf("\nPeso das encomendas carregadas:%0.2f", vetorVeiculos[i].pesoEncomendas);
         printf("\nNumero de encomendas entregues:%d || Numero de Viagens:%d",vetorVeiculos[i].numEncomendas,vetorVeiculos[i].quantViagens);
-    }
+    }}
 }
 int procurarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos)
 {
@@ -140,7 +152,7 @@ int procurarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos)
         }
         while(opcao == 0 || opcao !=0);
     }
-
+return 0;
 }
 
 void alterarEstadoVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos)
@@ -159,7 +171,8 @@ void alterarEstadoVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeicu
             opcao = toupper(opcao);
             printf("opcao: %c",opcao);
             vetorVeiculo[indice].estado = opcao;
-        }while(vetorVeiculo[indice].estado == 'D');
+        }
+        while(vetorVeiculo[indice].estado == 'D');
 
         break;
     case 'E':
@@ -194,7 +207,9 @@ void alterarEstadoVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeicu
         }
         while(opcao != 'D' || opcao != 'E' || opcao != 'T' || opcao != 'A');
         if(opcao=='D')
-        {vetorVeiculo[indice].quantViagens++;}
+        {
+            vetorVeiculo[indice].quantViagens++;
+        }
         vetorVeiculo[indice].estado=opcao;
         break;
     case 'A':
@@ -211,4 +226,78 @@ void alterarEstadoVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeicu
         break;
     }
 }
+
+void listarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEncomendas)
+{
+    int i, indiceEnc,j;
+    indiceEnc=procurarEncomenda(vetorEncomendas, quantEncomendas);
+    if(vetorEncomendas[indiceEnc].estado == 'E')
+    {
+        for(j=0; j<quantVeiculos; j++)
+        {
+            if(strcmp(vetorVeiculos[j].matricula,vetorEncomendas[indiceEnc].matriculaEnc)==0)
+            {
+                i=j;
+            }
+        }
+        printf("\n\nMatricula: %c%c - %c%c - %c%c \n",vetorVeiculos[i].matricula[0],vetorVeiculos[i].matricula[1],vetorVeiculos[i].matricula[2],vetorVeiculos[i].matricula[3],vetorVeiculos[i].matricula[4],vetorVeiculos[i].matricula[5]);
+
+        printf("Data Fabrico: %d-%d-%d",vetorVeiculos[i].dataFabrico.dia,vetorVeiculos[i].dataFabrico.mes,vetorVeiculos[i].dataFabrico.ano);
+        printf("\nCarga Maxima:%0.2f\n",vetorVeiculos[i].cargaMax);
+        switch(vetorVeiculos[i].estado)
+        {
+        case 'D':
+            printf("\nEstado:Disponivel");
+            break;
+        case 'E':
+            printf("\nEstado:Em Carga");
+            break;
+        case 'T':
+            printf("\nEstado:Em Transporte");
+            break;
+        case 'R':
+            printf("\nEstado:Em Regresso");
+            break;
+        case 'A':
+            printf("\nEstado:Avariado");
+            break;
+        }
+        printf("\nPeso das encomendas carregadas:%0.2f", vetorVeiculos[i].pesoEncomendas);
+        printf("\nNumero de encomendas entregues:%d || Numero de Viagens:%d",vetorVeiculos[i].numEncomendas,vetorVeiculos[i].quantViagens);
+    }
+    else
+    {
+        printf("\nA encomenda selecionada ainda nao foi entregue");
+    }
+}
+
+void organizaVeiculos(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos)
+{
+    int i, j, aux;
+    if(quantVeiculos == 0)
+    {
+        printf("\nNao existem veiculos registados.");
+
+    }
+    else
+    {
+        do
+        {
+            for(i = 0; i < quantVeiculos ; i++)
+        {
+            j=i+1;
+            if(vetorVeiculo[j].numEncomendas > vetorVeiculo[i].numEncomendas)
+                    {
+                        aux = vetorVeiculo[j].numEncomendas;
+                        vetorVeiculo[j].numEncomendas = vetorVeiculo[i].numEncomendas;
+                        vetorVeiculo[i].numEncomendas = aux;
+                    }
+            }
+        }
+        while(vetorVeiculo[i-1].numEncomendas < vetorVeiculo[i].numEncomendas);
+        listarVeiculos(quantVeiculos, vetorVeiculo);
+    }
+
+}
+
 
