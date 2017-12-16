@@ -57,9 +57,9 @@
 1512672693 d:\01110001000\codeblocks programas\esbocoprojetofinalp1\funcoes_auxiliares.h
 	"constantes.h"
 
-1513120049 d:\01110001000\codeblocks programas\esbocoprojetofinalp1\constantes.h
+1513333649 d:\01110001000\codeblocks programas\esbocoprojetofinalp1\constantes.h
 
-1513269171 source:d:\01110001000\codeblocks programas\esbocoprojetofinalp1\funcoes_encomendas.c
+1513370568 source:d:\01110001000\codeblocks programas\esbocoprojetofinalp1\funcoes_encomendas.c
 	<stdio.h>
 	<string.h>
 	<ctype.h>
@@ -72,18 +72,19 @@
 	"constantes.h"
 	"funcoes_auxiliares.h"
 
-1513266706 d:\01110001000\codeblocks programas\esbocoprojetofinalp1\funcoes_encomendas.h
+1513335934 d:\01110001000\codeblocks programas\esbocoprojetofinalp1\funcoes_encomendas.h
 	"constantes.h"
 
-1513275978 source:d:\01110001000\codeblocks programas\esbocoprojetofinalp1\funcoes_veiculos.c
+1513431670 source:d:\01110001000\codeblocks programas\esbocoprojetofinalp1\funcoes_veiculos.c
 	<stdio.h>
 	<string.h>
 	<ctype.h>
 	"constantes.h"
 	"funcoes_veiculos.h"
 	"funcoes_auxiliares.h"
+	"funcoes_encomendas.h"
 
-1513267648 source:d:\01110001000\codeblocks programas\esbocoprojetofinalp1\main.c
+1513371386 source:d:\01110001000\codeblocks programas\esbocoprojetofinalp1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -107,7 +108,7 @@
 	"constantes.h"
 	"funcoes_encomendas.h"
 
-1513277269 source:d:\01110001000\codeblocks programas\esbocoprojetofinalp1\funcoes_menu.c
+1513336684 source:d:\01110001000\codeblocks programas\esbocoprojetofinalp1\funcoes_menu.c
 	<stdio.h>
 	"funcoes_ficheiros.h"
 	"constantes.h"

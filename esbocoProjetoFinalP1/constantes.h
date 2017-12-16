@@ -30,7 +30,7 @@ typedef struct
 
 typedef struct
 {
-    char matricula[5];
+    char matricula[8];
     tipoData dataFabrico;
     float cargaMax;
     float pesoEncomendas;

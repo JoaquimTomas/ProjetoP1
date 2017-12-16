@@ -34,7 +34,8 @@ int menuVeiculos (int quantVeiculos)
     printf("\nListar Veiculo(s)-2");
     printf("\nAlterar estado de um Veiculo-3");
     printf("\nListar Veiculos(Decrescente pelo Nr.Encomedas Entregues)-4");
-    printf("\nRetroceder-5");
+    printf("\nDescarregar Veiculo-5");
+    printf("\nRetroceder-6");
     printf("\nOpcao:");
     scanf(" %d",&opcao);
     limpaBufferStdin();

@@ -11,6 +11,10 @@
 int main()
 {
     int opcao, opcao2;
+    char matricula[8];
+    inserirMatricula2(matricula);
+    printf("matricula:%s",matricula);
+
 
     tipoVeiculo listaVeiculos[MAX_VEICULOS];
     tipoEncomenda listaEncomendas[MAX_ENCOMENDA];
@@ -38,14 +42,16 @@ int main()
                     break;
                 case 4:organizaVeiculos(listaVeiculos, quantVeiculos);
                     break;
-                case 5:
+                case 5:descarregarVeiculo(listaVeiculos, quantVeiculos, listaEncomendas, quantEncomendas);
+                    break;
+                case 6:
                     break;
                 default:
                     printf("\n\nOpcao invalida");
                 }
 
             }
-            while(opcao != 5);
+            while(opcao != 6);
             break;
         case 2:
             do
@@ -57,7 +63,7 @@ int main()
                     listaEncomendas[quantEncomendas] =  inserirEncomenda(&quantEncomendas);
                     break;
                 case 2://listar encomendas
-                    listarEncomenda(quantEncomendas, listaEncomendas);
+                    listarEncomenda(quantEncomendas, listaEncomendas, listaVeiculos, quantVeiculos, 1);
                     break;
                 case 3://Eliminar encomenda
                     eliminarEncomenda(&quantEncomendas, listaEncomendas, listaVeiculos);
@@ -73,7 +79,7 @@ int main()
 
                     break;
                     case 2:
-                        break;
+                    break;
                     }
                     }while(opcao2!=3);
 
@@ -86,9 +92,11 @@ int main()
                 {
                 case 1:
                     registarCarregamento(quantVeiculos, listaVeiculos, listaEncomendas, quantEncomendas);
+                    opcao2=3;
                     break;
                 case 2:
                     carregarEncomendaAuto(listaVeiculos, quantVeiculos, listaEncomendas, quantEncomendas);
+                    opcao2=3;
                     break;
                 case 3:
                     break;

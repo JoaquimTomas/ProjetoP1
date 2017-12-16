@@ -4,7 +4,9 @@
 #include "constantes.h"
 char estadoEncomenda (int var);
 tipoEncomenda inserirEncomenda (int *quantEncomendas);
-void listarEncomenda (int quantEncomendas, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA]);
+//void listarEncomenda (int quantEncomendas, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA]);
+void listarEncomenda (int quantEncomendas, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, int var);
+
 void eliminarEncomenda (int *quantEncomendas, tipoEncomenda vetorEncomendas[MAX_STRING], tipoVeiculo vetorVeiculo[MAX_STRING]);
 int procurarEncomenda(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int quantEncomendas);
 void alterarDestino (tipoEncomenda listarEncomenda[MAX_ENCOMENDA], int quantEncomendas, int procurar);
@@ -13,5 +15,7 @@ void alterarEstado (tipoEncomenda listaEncomenda[MAX_ENCOMENDA], int quantEncome
 void registarCarregamento (int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS], tipoEncomenda listaEncomenda[MAX_ENCOMENDA], int quantEncomendas);
 
 void carregarEncomendaAuto(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEmcomendas);
+
+void descarregarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEncomendas);
 
 #endif //FUNCOES_ENCOMENDAS_H_INCLUDED

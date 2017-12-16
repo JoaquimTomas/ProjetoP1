@@ -1,61 +1,7 @@
-Total de veiculos: 10
-Matricula:12QW12@
-Data Fabrico: 12-12-2010
-Carga Maxima: 1000.00
-Numero de encomendas: 0
-Quantidade Viagens 0
-Estado:Disponivel
-Matricula:12WE12@
-Data Fabrico: 12-12-2010
-Carga Maxima: 1000.00
-Numero de encomendas: 0
-Quantidade Viagens 0
-Estado:Disponivel
-Matricula:12FG23@
-Data Fabrico: 1-1-2000
-Carga Maxima: 1000.00
-Numero de encomendas: 0
-Quantidade Viagens 0
-Estado:Disponivel
-Matricula:12DF12@
+Total de veiculos: 1
+Matricula:12WQ12@
 Data Fabrico: 1-1-2010
-Carga Maxima: 2000.00
+Carga Maxima: 10000.00
 Numero de encomendas: 0
 Quantidade Viagens 0
-Estado:Disponivel
-Matricula:12SD12@
-Data Fabrico: 2-2-2010
-Carga Maxima: 2000.00
-Numero de encomendas: 0
-Quantidade Viagens 0
-Estado:Disponivel
-Matricula:12GF12@
-Data Fabrico: 3-2-2010
-Carga Maxima: 2500.00
-Numero de encomendas: 0
-Quantidade Viagens 0
-Estado:Disponivel
-Matricula:45VB12@
-Data Fabrico: 12-12-2010
-Carga Maxima: 2010.00
-Numero de encomendas: 0
-Quantidade Viagens 0
-Estado:Disponivel
-Matricula:45FG67@
-Data Fabrico: 23-12-2010
-Carga Maxima: 3000.00
-Numero de encomendas: 0
-Quantidade Viagens 0
-Estado:Disponivel
-Matricula:89JN30@
-Data Fabrico: 1-11-2017
-Carga Maxima: 2010.00
-Numero de encomendas: 0
-Quantidade Viagens 0
-Estado:Disponivel
-Matricula:12FL56@
-Data Fabrico: 3-12-2017
-Carga Maxima: 5000.00
-Numero de encomendas: 0
-Quantidade Viagens 0
-Estado:Disponivel
+Estado:Em Carga
