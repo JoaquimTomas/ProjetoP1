@@ -9,6 +9,8 @@ void lerFicheiroBinario(tipoVeiculo listaVeiculos[MAX_VEICULOS],int *quantVeicul
 void gravarFicheiroBinarioEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int quantEncomendas);
 void guardarFicheiroTextoEncomendas(tipoEncomenda listaEncomedas[MAX_ENCOMENDA], int quantEncomendas);
 void lerFicheiroBinarioEncomendas(tipoEncomenda listaEncomendas[MAX_ENCOMENDA], int *quantEncomendas);
+void guardarFicheiroTextoEncDevolv(tipoEncomenda listaEncomendas[MAX_ENCOMENDA],tipoVeiculo listaVeiculos[MAX_VEICULOS],int quantDevol);
+
 
 
 

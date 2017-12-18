@@ -8,15 +8,11 @@
 #include "funcoes_encomendas.h"
 
 
-tipoVeiculo inserirVeiculo (int *quantVeiculos)
-{
+tipoVeiculo inserirVeiculo (int *quantVeiculos) {
     tipoVeiculo veiculo;
-    if(*quantVeiculos==10)
-    {
+    if(*quantVeiculos==10) {
         printf("\n\nAtingido o numero maximo de veiculos");
-    }
-    else
-    {
+    } else {
         printf("\n\t***********Inserir Veiculo**************");
 
         inserirMatricula(veiculo.matricula);
@@ -31,71 +27,48 @@ tipoVeiculo inserirVeiculo (int *quantVeiculos)
     }
     return veiculo;
 }
+void inserirMatricula(char matricula[8]) {
+    int i;
+    lerString("\nIntroduza a Matricula:",matricula,9);
 
-void inserirMatricula(char matricula[8])
-{
-    char a,b;
-    int numMatricula;
-    int controlo, v2000;//v2000 usada para verificar se é inteiro
-    char controlos [2];
-    do
-    {
-    numMatricula = lerInteiro("\nPor favor introduza os primeiros dois numeros da matricula: ", 10,99);
-    sprintf(matricula, "%d", numMatricula);
-    controlo = isalnum(numMatricula);
-    }while(controlo != 4);
+    matricula[8]='\0';
 
-    do
-    {
-        printf("Por favor introduza os caracteres da matricula: ");
-        scanf(" %c%c", &a, &b);
-        v2000 = a;
+    //checa se os caracteres introduzidos sao numero ou letras
+    for(i=0; i<8; i++) {
+        //coloca "-" nas posicoes 2 e 5 do vetor
+        if(i==2 || i==5) {
+            matricula[i]='-';
+
+        } else {
+            if(i==1 || i==4 || i==7) {
+                //este if existe para saltar os numeros 1,4,7 do i
+            } else {
+                if((isalnum(matricula[i]) && isalnum(matricula[i+1])) != 0) {
+
+
+                    //checa se o utilizador colocou os numeros ou letras seguidos;
+
+                    if(isalpha(matricula[i]) == isalpha(matricula[i+1])) {
+                    } else {
+                        printf("\nTera de introduzir uma matricula do tipo XX-YY-ZZ");
+                        inserirMatricula(matricula);
+                    }
+                } else {
+                    printf("\nTera de colocar a matricula na forma XX-YY-ZZ");
+                }
+            }
+        }
+
     }
-    while(v2000 == 48 || v2000 == 49 || v2000 == 50 || v2000 == 51 || v2000 == 52 || v2000 == 53 || v2000 == 54 || v2000 == 55 || v2000 == 56 || v2000 == 57 || b == '\n' || a == '\n');
-//comparamos os valores de v2000 com os da tabela ASCII para saber se sao inteiros ou caracteres
-    a = toupper(a);
-    b = toupper(b);
-    matricula [2] = a;
-    matricula [3] = b;
-    numMatricula = lerInteiro("Por favor introduza os ultimos dois numeros da matricula: ", 10,99);
-    sprintf(controlos, "%d", numMatricula);
-    matricula [4] = controlos [0];
-    matricula[5] = controlos [1];
-
-
 }
-
-void inserirMatricula2(char matricula[8])
-{
-    int controlo, controlo2;
-    lerString("\nIntroduza a matricula do tipo XX-YY-YY:",matricula,8);
-    matricula[7] = '\0';
-    controlo = isalnum(matricula[0]);
-    controlo2= isalpha(matricula[4]);
-        printf("controlo: %d || controlo2: %d\n",controlo,controlo2);
-
-    if(controlo != 4 && controlo2 != 2)
-    {
-        printf("\nterá de inserir uma matricula valida:");
-    }
-
-    controlo2= isalpha(matricula[4]);
-
-
-}
-
-
-char estadoVeiculo (tipoVeiculo estado)
-{
+char estadoVeiculo (tipoVeiculo estado) {
     char opcao;
     int duh=0;
-    do
-    {
-        printf("\nIntroduza o Estado do Veiculo: %c%c - %c%c - %c%c\n(D)disponivel || (A)Avariado:",estado.matricula[0],estado.matricula[1],estado.matricula[2],estado.matricula[3],estado.matricula[4],estado.matricula[5]);
+    do {
+        printf("\nIntroduza o Estado do Veiculo: %s\n(D)disponivel || (A)Avariado:",estado.matricula);
         scanf(" %c",&opcao);
         opcao=toupper(opcao);
-        switch(opcao)
-        {
+        switch(opcao) {
         case 'D'://disponivel
             duh++;
             break;
@@ -105,30 +78,22 @@ char estadoVeiculo (tipoVeiculo estado)
         default:
             opcao=estadoVeiculo(estado);
         }
-    }
-    while(duh==0);
+    } while(duh==0);
     return opcao;
 }
+void listarVeiculos(int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS]) {
 
-
-void listarVeiculos(int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS])
-{
-    if(quantVeiculos == 0)
-    {
+    if(quantVeiculos == 0) {
         printf("\nNao existem veiculos para listar");
-    }
-    else
-    {
+    } else {
         printf("\n\t***************Listar Veiculos**************");
         int i;
-        for(i=0; i<quantVeiculos; i++)
-        {
-            printf("\n\nMatricula: %c%c - %c%c - %c%c \n",vetorVeiculos[i].matricula[0],vetorVeiculos[i].matricula[1],vetorVeiculos[i].matricula[2],vetorVeiculos[i].matricula[3],vetorVeiculos[i].matricula[4],vetorVeiculos[i].matricula[5]);
+        for(i=0; i<quantVeiculos; i++) {
+            printf("\n\nMatricula: %s\n",vetorVeiculos[i].matricula);
 
             printf("Data Fabrico: %d-%d-%d",vetorVeiculos[i].dataFabrico.dia,vetorVeiculos[i].dataFabrico.mes,vetorVeiculos[i].dataFabrico.ano);
             printf("\nCarga Maxima:%0.2f\n",vetorVeiculos[i].cargaMax);
-            switch(vetorVeiculos[i].estado)
-            {
+            switch(vetorVeiculos[i].estado) {
             case 'D':
                 printf("\nEstado:Disponivel");
                 break;
@@ -150,130 +115,136 @@ void listarVeiculos(int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS])
         }
     }
 }
-int procurarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos)
-{
+int procurarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos) {
     int i, opcao=0;
-    if(quantVeiculos == 0)
-    {
+    if(quantVeiculos == 0) {
         printf("\nAinda nao Existem veiculos");
-    }
-    else
-    {
-        do
-        {
+    } else {
+        do {
             printf("\nSelecione um dos seguites Veiculos:");
-            for(i=0; i<quantVeiculos; i++)
-            {
-                printf("\n Nr.Carrinha:%d || Matricula:%c%c - %c%c - %c%c",i+1, vetorVeiculos[i].matricula[0],vetorVeiculos[i].matricula[1],vetorVeiculos[i].matricula[2],vetorVeiculos[i].matricula[3],vetorVeiculos[i].matricula[4],vetorVeiculos[i].matricula[5]);
+            for(i=0; i<quantVeiculos; i++) {
+                printf("\n Nr.Carrinha:%d || Matricula:%s",i+1, vetorVeiculos[i].matricula);
             }
             printf("\nopcao:");
             scanf(" %d",&opcao);
-            for(i=0; i<=quantVeiculos; i++)
-            {
-                if(i==opcao && opcao != 0)
-                {
+            for(i=0; i<=quantVeiculos; i++) {
+                if(i==opcao && opcao != 0) {
                     opcao--;
                     return opcao;
                 }
             }
             printf("\nErro, por favor introduza um dos veiculos listados");
-        }
-        while(opcao == 0 || opcao !=0);
+        } while(opcao == 0 || opcao !=0);
     }
     return 0;
 }
 
-void alterarEstadoVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos)
-{
-    int indice;
-    char opcao;
+void alterarEstadoVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEncomendas) {
+    int indice,baza=1;
+    char opcao, opcao2;
     indice = procurarVeiculo(vetorVeiculo, quantVeiculos);
-    switch(vetorVeiculo[indice].estado)
-    {
+    switch(vetorVeiculo[indice].estado) {
     case 'D':
         do
         {
+            opcao = 'D';
             printf("\nEstado Atual:Disponivel");
-            printf("\nEscolha o estado a substituir:\n(E)-Em carga || (T)Em Transporte || (R)- Em Regresso || (A)-Avariado\nopcao:");
+            printf("\nEscolha o estado a substituir:\n(E)-Em carga || (A)-Avariado\nopcao:");
             scanf(" %c",&opcao);
             opcao = toupper(opcao);
-            printf("opcao: %c",opcao);
-            vetorVeiculo[indice].estado = opcao;
-        }
-        while(vetorVeiculo[indice].estado == 'D');
+            if(opcao == 'A')
+            {
+                baza = 0;
+            }
+            else
+            {
+            if(opcao == 'E')
+            {
+                do
+                {
+                printf("\nNao Existem Encomendas nesse veiculo deseja carregar (S/N)");
+                scanf(" %c",&opcao2);
+                opcao2=toupper(opcao2);
+                if(opcao2=='S')
+                   {
+                    carregarEncomendaAuto(vetorVeiculo, quantVeiculos, vetorEncomendas, quantEncomendas, indice);
+                    baza=0;
+
+
+                   }
+                     else
+                    {
+                        vetorVeiculo[indice].estado = 'D';
+                        baza=0;
+                    }
+
+                }while(baza != 0);
+            }
+
+            }
+                 }while(baza != 0);
+
 
         break;
     case 'E':
-        do
-        {
+        do {
             printf("\nEstado Atual:Em Carga");
-            printf("Escolha o estado a substituir:\n(D)-Disponivel || (T)Em Transporte || (R)- Em Regresso || (A)-Avariado\nopcao:");
+            printf("Escolha o estado a substituir:\n(T)Em Transporte || (S)-Sair\nopcao:");
             scanf(" %c",&opcao);
             opcao=toupper(opcao);
-        }
-        while(opcao != 'D' || opcao != 'T' || opcao != 'R' || opcao != 'A');
+        } while(opcao != 'T');
         vetorVeiculo[indice].estado = opcao;
         break;
     case 'T':
-        do
-        {
+        do {
             printf("\nEstado Atual:Em Transporte");
-            printf("Escolha o estado a substituir:\n(D)-Disponivel || (E)-Em Carga || (R)-Em Regresso || (A)-Avariado\nopcao:");
+            printf("Escolha o estado a substituir:\n (R)-Em Regresso \nopcao:");
             scanf(" %c",&opcao);
             opcao=toupper(opcao);
-        }
-        while(opcao != 'D' || opcao != 'E' || opcao != 'R' || opcao != 'A');
+        } while(opcao != 'R');
         vetorVeiculo[indice].estado=opcao;
         break;
     case 'R':
-        do
-        {
+        do {
             printf("\nEstado Atual:Em Regresso");
-            printf("Escolha o estado a substituir:\n(D)-Disponivel || (E)-Em Carga || (T)-Em Transporte || (A)-Avariado\nopcao:");
+            printf("Escolha o estado a substituir:\n(D)-Disponivel || (S)-Sair \nopcao:");
             scanf(" %c",&opcao);
             opcao=toupper(opcao);
-        }
-        while(opcao != 'D' || opcao != 'E' || opcao != 'T' || opcao != 'A');
-        if(opcao=='D')
-        {
+             vetorVeiculo[indice].quantViagens++;
+        } while(opcao != 'D' || opcao != 'S');
+        if(opcao=='D') {
             vetorVeiculo[indice].quantViagens++;
         }
         vetorVeiculo[indice].estado=opcao;
         break;
     case 'A':
-        do
-        {
+        do {
             printf("\nEstado Atual:Avariado");
-            printf("Escolha o estado a substituir:\n(D)-Disponivel || (E)-Em Carga || (T)-Em Transporte || (R)-Em Regresso\nopcao:");
+            printf("Escolha o estado a substituir:\n(D)-Disponivel || (S)-Sair\nopcao:");
             scanf(" %c",&opcao);
             opcao=toupper(opcao);
-        }
-        while(opcao != 'D' || opcao != 'E' || opcao != 'T' || opcao != 'R');
+        } while(opcao != 'D' || opcao != 'S');
         vetorVeiculo[indice].estado=opcao;
 
         break;
     }
 }
 
-void listarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEncomendas)
-{
+
+void listarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEncomendas) {
     int i, indiceEnc,j;
     indiceEnc = procurarEncomenda(vetorEncomendas, quantEncomendas);
-    if(vetorEncomendas[indiceEnc].estado == 'E')
-    {
-        for(j=0; j<quantVeiculos; j++)
-        {
-            if(strcmp(vetorVeiculos[j].matricula,vetorEncomendas[indiceEnc].matriculaEnc)==0)
-            {
+    if(vetorEncomendas[indiceEnc].estado == 'E') {
+        for(j=0; j<quantVeiculos; j++) {
+            if(strcmp(vetorVeiculos[j].matricula,vetorEncomendas[indiceEnc].matriculaEnc)==0) {
                 i=j;
             }
         }
-        printf("\n\nMatricula: %c%c - %c%c - %c%c \n",vetorVeiculos[i].matricula[0],vetorVeiculos[i].matricula[1],vetorVeiculos[i].matricula[2],vetorVeiculos[i].matricula[3],vetorVeiculos[i].matricula[4],vetorVeiculos[i].matricula[5]);
+        printf("\n\nMatricula: %s \n",vetorVeiculos[i].matricula);//,vetorVeiculos[i].matricula[1],vetorVeiculos[i].matricula[2],vetorVeiculos[i].matricula[3],vetorVeiculos[i].matricula[4],vetorVeiculos[i].matricula[5
 
         printf("Data Fabrico: %d-%d-%d",vetorVeiculos[i].dataFabrico.dia,vetorVeiculos[i].dataFabrico.mes,vetorVeiculos[i].dataFabrico.ano);
         printf("\nCarga Maxima:%0.2f\n",vetorVeiculos[i].cargaMax);
-        switch(vetorVeiculos[i].estado)
-        {
+        switch(vetorVeiculos[i].estado) {
         case 'D':
             printf("\nEstado:Disponivel");
             break;
@@ -292,33 +263,53 @@ void listarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, t
         }
         printf("\nPeso das encomendas carregadas:%0.2f", vetorVeiculos[i].pesoEncomendas);
         printf("\nNumero de encomendas entregues:%d || Numero de Viagens:%d",vetorVeiculos[i].numEncomendas,vetorVeiculos[i].quantViagens);
-    }
-    else
-    {
+    } else {
         printf("\nA encomenda selecionada ainda nao foi entregue");
     }
 }
+void consultarVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos) {
+    int found;
 
+    found = procuraMatricula(vetorVeiculo, quantVeiculos);
 
-void organizaVeiculos(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos)
-{
-    int i, j, aux;
-    if(quantVeiculos == 0)
-    {
-        printf("\nNao existem veiculos registados.");
+    if(found != -1) {
+        printf("\n\nMatricula: %s \n",vetorVeiculo[found].matricula);
 
+        printf("Data Fabrico: %d-%d-%d",vetorVeiculo[found].dataFabrico.dia,vetorVeiculo[found].dataFabrico.mes,vetorVeiculo[found].dataFabrico.ano);
+        printf("\nCarga Maxima:%0.2f\n",vetorVeiculo[found].cargaMax);
+        switch(vetorVeiculo[found].estado) {
+        case 'D':
+            printf("\nEstado:Disponivel");
+            break;
+        case 'E':
+            printf("\nEstado:Em Carga");
+            break;
+        case 'T':
+            printf("\nEstado:Em Transporte");
+            break;
+        case 'R':
+            printf("\nEstado:Em Regresso");
+            break;
+        case 'A':
+            printf("\nEstado:Avariado");
+            break;
+
+        }
+        printf("\nPeso das encomendas carregadas:%0.2f", vetorVeiculo[found].pesoEncomendas);
+        printf("\nNumero de encomendas entregues:%d || Numero de Viagens:%d",vetorVeiculo[found].numEncomendas,vetorVeiculo[found].quantViagens);
     }
-    else
-    {
-        do
-        {
-            for(i = 0; i < quantVeiculos - 1; i++)
-            {
-                for(j=i + 1; j < quantVeiculos ; j++)
-                {
 
-                    if(vetorVeiculo[j].numEncomendas > vetorVeiculo[i].numEncomendas)
-                    {
+}
+void organizaVeiculos(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos) {
+    int i, j, aux;
+    if(quantVeiculos == 0) {
+        printf("\nNao existem veiculos registados.");
+    } else {
+        do {
+            for(i = 0; i < quantVeiculos - 1; i++) {
+                for(j=i + 1; j < quantVeiculos ; j++) {
+
+                    if(vetorVeiculo[j].numEncomendas > vetorVeiculo[i].numEncomendas && vetorVeiculo[i].estado == 'E') {
                         aux = vetorVeiculo[j].numEncomendas;
                         vetorVeiculo[j].numEncomendas = vetorVeiculo[i].numEncomendas;
                         vetorVeiculo[i].numEncomendas = aux;
@@ -327,11 +318,73 @@ void organizaVeiculos(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos)
                 }
             }
 
-        }
-        while(j != quantVeiculos);
+        } while(j != quantVeiculos);
         listarVeiculos(quantVeiculos, vetorVeiculo);
     }
 
 }
+int procuraMatricula(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos) {
 
+    int i,found=-1,leng;
+    char matriculaProc [8];
 
+    if(quantVeiculos == 0) {
+
+        printf("\nNao existem veiculos introduzidos.\n");
+        return found;
+
+    } else {
+
+        lerString("\nPor favor introduza a matricula que deseja procurar(\"XX-YY-ZZ\"): ", matriculaProc, 9);
+
+        leng = strlen(matriculaProc);
+
+        if( leng < 8 ) {
+
+            printf("\nPor favor introduza a matricula completa.\n");
+            consultarVeiculo(vetorVeiculos, quantVeiculos);
+
+        } else {
+            for(i=0; i<=quantVeiculos ; i++) {
+
+                if(strncmp(matriculaProc,vetorVeiculos[i].matricula, 8) == 0) {//strncmp compara strings ate n chars, neste caso 8
+
+                    found = i;
+                    i = quantVeiculos;//igualo a quantVeiculos para sair do loop
+                }
+            }
+
+        }
+    }
+    return found;
+}
+void registarViagem(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos) {
+
+    int found, opcao;
+    if(quantVeiculos == 0) {
+        printf("\nNao existem veiculos para listar");
+    } else {
+        found = procuraMatricula(vetorVeiculos, quantVeiculos);
+        printf("\nRegistar comeco de viagem- 1");
+        printf("\nRegistar regresso de viagem- 2");
+        printf("\nOpcao:");
+        scanf(" %d", &opcao);
+
+        switch(opcao){
+        case 1:
+            vetorVeiculos[found].estado = 'T';
+            printf("\nVeiculo %s alterado para \"Em Transporte\"", vetorVeiculos[found].matricula);
+            break;
+        case 2:
+            vetorVeiculos[found].estado = 'R';
+            printf("\nVeiculo %s alterado para \"Em Regresso\"", vetorVeiculos[found].matricula);
+            break;
+        default:
+            printf("\n\nOpcao invalida");
+        break;
+
+        }
+
+    }
+
+}

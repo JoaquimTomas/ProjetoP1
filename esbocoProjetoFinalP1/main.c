@@ -8,57 +8,56 @@
 #include "funcoes_menu.h"
 #include "funcoes_ficheiros.h"
 
-int main()
-{
+int main() {
     int opcao, opcao2;
-    char matricula[8];
-    inserirMatricula2(matricula);
-    printf("matricula:%s",matricula);
 
 
     tipoVeiculo listaVeiculos[MAX_VEICULOS];
     tipoEncomenda listaEncomendas[MAX_ENCOMENDA];
-    int quantVeiculos=0,quantEncomendas=0;
-    do
-    {
+    int quantVeiculos=0,quantEncomendas=0,quantDevol=0;
+    do {
         opcao2=0;
-        opcao = menuPrincipal(quantVeiculos,quantEncomendas);
-        switch(opcao)
-        {
+        opcao = menuPrincipal(quantVeiculos,quantEncomendas,quantDevol);
+        switch(opcao) {
 
         case 1:
-            do
-            {
+            do {
                 opcao=menuVeiculos(quantVeiculos);
-                switch(opcao)
-                {
+                switch(opcao) {
                 case 1://inserir veiculos
                     listaVeiculos[quantVeiculos] = inserirVeiculo(&quantVeiculos);
                     break;
                 case 2://listar veiculos
                     listarVeiculos(quantVeiculos,listaVeiculos);
                     break;
-                case 3:alterarEstadoVeiculo(listaVeiculos, quantVeiculos);
+                case 3:
+                    alterarEstadoVeiculo(listaVeiculos, quantVeiculos,listaEncomendas, quantEncomendas);
                     break;
-                case 4:organizaVeiculos(listaVeiculos, quantVeiculos);
+                case 4:
+                    organizaVeiculos(listaVeiculos, quantVeiculos);
                     break;
-                case 5:descarregarVeiculo(listaVeiculos, quantVeiculos, listaEncomendas, quantEncomendas);
+                case 5:
+                    descarregarVeiculo(listaVeiculos, quantVeiculos,listaEncomendas,quantEncomendas,&quantDevol);
                     break;
                 case 6:
+                    consultarVeiculo(listaVeiculos, quantVeiculos);
+
+                    break;
+                case 7:
+                    registarViagem(listaVeiculos, quantVeiculos);
+                    break;
+                case 8:
                     break;
                 default:
                     printf("\n\nOpcao invalida");
                 }
 
-            }
-            while(opcao != 6);
+            } while(opcao != 8);
             break;
         case 2:
-            do
-            {
+            do {
                 opcao = menuEncomendas(quantEncomendas);
-                switch(opcao)
-                {
+                switch(opcao) {
                 case 1://inserir encomendas
                     listaEncomendas[quantEncomendas] =  inserirEncomenda(&quantEncomendas);
                     break;
@@ -69,66 +68,71 @@ int main()
                     eliminarEncomenda(&quantEncomendas, listaEncomendas, listaVeiculos);
                     break;
                 case 4://Alterar estado
-                    do
-                    {
-                    opcao2=menuAlterarEstado();
-                    switch(opcao2)
-                    {
-                    case 1:
-                        alterarEstado(listaEncomendas, quantEncomendas);
+                    do {
+                        opcao2=menuAlterarEstado();
+                        switch(opcao2) {
+                        case 1:
+                            alterarEstado(listaEncomendas, quantEncomendas,&quantDevol, listaVeiculos, quantVeiculos);
 
-                    break;
-                    case 2:
-                    break;
-                    }
-                    }while(opcao2!=3);
+                            break;
+                        case 2:
+                            break;
+
+                        }
+                    } while(opcao2!=3);
 
                     break;
                 case 5:
-                opcao2=menuCarregarEncomenda();
-                do
-                {
-                switch(opcao2)
-                {
-                case 1:
-                    registarCarregamento(quantVeiculos, listaVeiculos, listaEncomendas, quantEncomendas);
-                    opcao2=3;
-                    break;
-                case 2:
-                    carregarEncomendaAuto(listaVeiculos, quantVeiculos, listaEncomendas, quantEncomendas);
-                    opcao2=3;
-                    break;
-                case 3:
-                    break;
-                default:
-                    printf("\nOpcao Invalida");
-                }
-                }while(opcao2!=3);
+                    opcao2=menuCarregarEncomenda();
+                    do {
+                        switch(opcao2) {
+                        case 1:
+                            registarCarregamento(quantVeiculos, listaVeiculos, listaEncomendas, quantEncomendas);
+                            opcao2=3;
+                            break;
+                        case 2:
+                            carregarEncomendaAuto(listaVeiculos, quantVeiculos, listaEncomendas, quantEncomendas,-1);
+                            opcao2=3;
+                            break;
+                        case 3:
+                            break;
+                        default:
+                            printf("\nOpcao Invalida");
+                        }
+                    } while(opcao2!=3);
 
                     break;
                 case 6://listar o veiculo que entregou a encomenda
                     listarVeiculo(listaVeiculos, quantVeiculos, listaEncomendas, quantEncomendas);
                     break;
                 case 7:
+                    consultaEncomenda(listaEncomendas, quantEncomendas);
+
+                    break;
+                case 8:
 
                     break;
                 default:
                     printf("\nOpcao Invalida");
                 }
-            }
-            while(opcao != 7);
+            } while(opcao != 8);
             break;
         case 3:
             gravarFicheiroBinario(listaVeiculos, quantVeiculos);
             gravarFicheiroBinarioEncomendas(listaEncomendas, quantEncomendas);
             guardarficheiroTexto(listaVeiculos, quantVeiculos);
             guardarFicheiroTextoEncomendas(listaEncomendas, quantEncomendas);
+
+
             break;
         case 4:
             lerFicheiroBinarioEncomendas(listaEncomendas, &quantEncomendas);
             lerFicheiroBinario(listaVeiculos, &quantVeiculos);
             break;
         case 5:
+            dadosEstatisticos(listaVeiculos, quantVeiculos,listaEncomendas, quantEncomendas);
+            break;
+        case 6:
             break;
         default:
             printf("\nOpcao Invalida ");
@@ -136,8 +140,7 @@ int main()
         }
 
 
-    }
-    while(opcao != 99);
+    } while(opcao != 6);
     return 0;
 
 }

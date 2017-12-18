@@ -114,3 +114,137 @@
 	"constantes.h"
 	"funcoes_menu.h"
 
+1513617948 source:c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\funcoes_auxiliares.c
+	<stdio.h>
+	<string.h>
+	"funcoes_auxiliares.h"
+
+1513413030 c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\funcoes_auxiliares.h
+	"constantes.h"
+
+1513535477 c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\constantes.h
+
+1513617795 source:c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\funcoes_encomendas.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"constantes.h"
+	"funcoes_veiculos.h"
+	"funcoes_auxiliares.h"
+	"funcoes_encomendas.h"
+	"funcoes_ficheiros.h"
+
+1513555718 c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\funcoes_veiculos.h
+	"constantes.h"
+	"funcoes_auxiliares.h"
+
+1513611630 c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\funcoes_encomendas.h
+	"constantes.h"
+
+1513614319 source:c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\funcoes_ficheiros.c
+	<stdio.h>
+	"funcoes_ficheiros.h"
+
+1513528232 c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\funcoes_ficheiros.h
+	"constantes.h"
+
+1513618589 source:c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\funcoes_menu.c
+	<stdio.h>
+	<string.h>
+	"funcoes_ficheiros.h"
+	"constantes.h"
+	"funcoes_menu.h"
+
+1513618418 c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\funcoes_menu.h
+	"constantes.h"
+	"funcoes_veiculos.h"
+	"constantes.h"
+	"funcoes_encomendas.h"
+
+1513617667 source:c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\funcoes_veiculos.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"constantes.h"
+	"funcoes_veiculos.h"
+	"funcoes_auxiliares.h"
+	"funcoes_encomendas.h"
+
+1513618589 source:c:\users\loyal potato\desktop\projetop1-master\esbocoprojetofinalp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"funcoes_auxiliares.h"
+	"funcoes_veiculos.h"
+	"constantes.h"
+	"funcoes_encomendas.h"
+	"funcoes_menu.h"
+	"funcoes_ficheiros.h"
+
+1513619028 source:c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\funcoes_auxiliares.c
+	<stdio.h>
+	<string.h>
+	"funcoes_auxiliares.h"
+
+1513619028 c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\funcoes_auxiliares.h
+	"constantes.h"
+
+1513619027 c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\constantes.h
+
+1513619028 source:c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\funcoes_ficheiros.c
+	<stdio.h>
+	"funcoes_ficheiros.h"
+
+1513619028 c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\funcoes_ficheiros.h
+	"constantes.h"
+
+1513622982 source:c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\funcoes_veiculos.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"constantes.h"
+	"funcoes_veiculos.h"
+	"funcoes_auxiliares.h"
+	"funcoes_encomendas.h"
+
+1513622958 c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\funcoes_veiculos.h
+	"constantes.h"
+	"funcoes_auxiliares.h"
+
+1513624039 c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\funcoes_encomendas.h
+	"constantes.h"
+
+1513623008 source:c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"funcoes_auxiliares.h"
+	"funcoes_veiculos.h"
+	"constantes.h"
+	"funcoes_encomendas.h"
+	"funcoes_menu.h"
+	"funcoes_ficheiros.h"
+
+1513619028 c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\funcoes_menu.h
+	"constantes.h"
+	"funcoes_veiculos.h"
+	"constantes.h"
+	"funcoes_encomendas.h"
+
+1513620178 source:c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\funcoes_menu.c
+	<stdio.h>
+	<string.h>
+	"funcoes_ficheiros.h"
+	"constantes.h"
+	"funcoes_menu.h"
+
+1513622843 source:c:\users\eduto\desktop\projetop1-master (2)\projetop1-master\esbocoprojetofinalp1\funcoes_encomendas.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"constantes.h"
+	"funcoes_veiculos.h"
+	"funcoes_auxiliares.h"
+	"funcoes_encomendas.h"
+	"funcoes_ficheiros.h"
+

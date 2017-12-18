@@ -6,14 +6,17 @@
 tipoVeiculo inserirVeiculo(int *quantVeiculos);
 char estadoVeiculo (tipoVeiculo estado);
 void listarVeiculos(int quantVeiculos, tipoVeiculo vetorVeiculos[MAX_VEICULOS]);
-void inserirMatricula(char matricula[5]);
+void inserirMatricula(char matricula[8]);
 
-void alterarEstadoVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos);
+void alterarEstadoVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEncomendas);
 int procurarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos);
 
 void listarVeiculo(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos, tipoEncomenda vetorEncomendas[MAX_ENCOMENDA], int quantEncomendas);
 
 void organizaVeiculos(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos);
+void consultarVeiculo(tipoVeiculo vetorVeiculo[MAX_VEICULOS], int quantVeiculos);
+int procuraMatricula(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos);
+void registarViagem(tipoVeiculo vetorVeiculos[MAX_VEICULOS], int quantVeiculos);
 
 
 

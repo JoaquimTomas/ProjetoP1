@@ -1,17 +1,39 @@
-total de encomendas: 2
+Total de encomendas: 5
 Numero Registo: 1
-Data registo: 12-12-2010
-Peso:1.00
-Destino: la
+Data registo: 1-23-2000
+Peso:299.00
+Destino: Rome
 
-Observacoes: ca
-
-Estado:Carregada
+Observacoes: 
+Estado:Registada
 Numero Registo: 2
-Data registo: 12-12-2010
-Peso:2.00
-Destino: belem
+Data registo: 12-30-2017
+Peso:10.00
+Destino: Portugal
 
-Observacoes: os 3 reis magos
+Observacoes: CUIDADO!!!!!
 
-Estado:Carregada
+Estado:Registada
+Numero Registo: 3
+Data registo: 7-5-2011
+Peso:1904.00
+Destino: Manila
+
+Observacoes: 
+Estado:Registada
+Numero Registo: 4
+Data registo: 6-19-2003
+Peso:8000.00
+Destino: USA
+
+Observacoes: Oops
+
+Estado:Registada
+Numero Registo: 5
+Data registo: 11-9-2001
+Peso:10000.00
+Destino: Twin Towers
+
+Observacoes: Allahu Akbar
+
+Estado:Registada

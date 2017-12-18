@@ -11,32 +11,36 @@
 
 typedef struct
 {
-    int mes,dia,ano;
+    int mes,dia,ano;//self explanatory
 
 }tipoData;
 
 
 typedef struct
 {
-    int numeroReg;
-    char matriculaEnc[5];
-    tipoData dataReg;
-    float peso;
-    char destino[MAX_STRING];
-    char estado;
-    char obs[MAX_STRING];
+    int numeroReg;//registo da encomenda
+    char matriculaEnc[8];//matricula do veiculo onde se encontra a encomenda
+    tipoData dataReg;//data de quando é feito o registo da encomenda
+    tipoData dataDevol;//data de quando a encomenda é devolvida
+    float peso;//self explanatory
+    char destino[MAX_STRING];//self explanatory
+    char estado;//estado da encomenda, entregue, devolvida, etc
+    char obs[MAX_STRING];//observaçao
+    char razao[MAX_STRING];//razao de devolver
+
 }tipoEncomenda;
 
 
 typedef struct
 {
-    char matricula[8];
-    tipoData dataFabrico;
-    float cargaMax;
-    float pesoEncomendas;
-    char estado;
-    int numEncomendas;
-    int quantViagens;
+    char matricula[8];//self explanatory
+    tipoData dataFabrico;//
+    float cargaMax;//self explanatory
+    float pesoEncomendas;//peso de encomendas no veiculo
+    char estado;//self explanatory
+    int numEncomendas;//numero de encomedas no veiculo
+    int quantViagens;//self explanatory
+
 }tipoVeiculo;
 
 
